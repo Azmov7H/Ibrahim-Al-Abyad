@@ -1,5 +1,8 @@
 const axios = require('axios');
 
+
+//Sql injaction
+
 async function testSQLInjection(url) {
     try {
         const testUrl = `${url}?id=1' OR '1'='1`;
@@ -9,6 +12,10 @@ async function testSQLInjection(url) {
         return 'No SQL Injection vulnerability found';
     }
 }
+
+
+
+//Cros site script
 
 async function testXSS(url) {
     try {
@@ -30,6 +37,8 @@ async function testCSRF(url) {
     }
 }
 
+
+// SSL Attack
 async function testSSL(url) {
     try {
         return 'SSL Scan Completed - No issues found';
